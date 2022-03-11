@@ -1,0 +1,1 @@
+export const removeNonNumbers = (text) => text.replace(/[\D]/g, '')
