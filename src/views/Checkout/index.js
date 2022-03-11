@@ -30,6 +30,9 @@ export const Checkout = () => {
               <InputText placeholder='CVV' maskFunction={cvvMask} onChangeText={()=>{}} maxLength={4} /> 
             </div> 
           </div>
+          <div className='div-button'>
+            <button onClick={()=>{}} className='btn-send' >Continuar</button>
+          </div>
         </div>
       </div>
   );
