@@ -27,9 +27,14 @@
   width: 90%;
 }
 
-.text-card{
+.text-card-number{
   color: white;
   font-size: 26px;
+}
+
+.text-card-name-validate{
+  color: white;
+  font-size: 22px;
 }
 
 .datas-name-validate {

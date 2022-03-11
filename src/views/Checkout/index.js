@@ -23,7 +23,7 @@ export const Checkout = () => {
         </div>
         <div className='div-right'>
           <div className='div-inputs'>
-            <InputText placeholder='Número do cartão' maskFunction={cardNumberMask} onChangeText={(text)=>setNumber(text)} /> 
+            <InputText placeholder='Número do cartão' maskFunction={cardNumberMask} onChangeText={(text)=>setNumber(text)} maxLength={18} />
             <InputText placeholder='Nome (igual ao cartão)' maskFunction={removeNumbers} onChangeText={(text)=>setName(text)} />
             <div className='div-subinputs'>
               <InputText placeholder='Validade' maskFunction={validatesMask} onChangeText={(text)=>setValidate(text)} /> 

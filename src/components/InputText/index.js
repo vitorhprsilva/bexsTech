@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import './styles.css'
 
-export const InputText = ({placeholder, onChangeText, maskFunction}) => {
+export const InputText = ({placeholder, onChangeText, maskFunction, maxLength}) => {
 
   const [text, setText] = useState('')
 
@@ -27,9 +27,10 @@ export const InputText = ({placeholder, onChangeText, maskFunction}) => {
       <input 
         placeholder={placeholder} 
         name={placeholder} 
+        maxLength={maxLength}
         onChange={(text) => {
           const newText = handleChange(text.target.value)
-          onChangeText(newText)
+          // onChangeText(newText)
           setText(newText)
         }} 
         value={text}
