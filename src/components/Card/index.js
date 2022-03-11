@@ -23,10 +23,10 @@ export const Card = ({numberCard, name, validate}) => {
   return(
     <div className={number===null ? 'card-off' : 'card-on'}>
       <div className="datas">
-        <text className="text-card">{number===null ? '**** **** **** ****' : number }</text>
+        <p className="text-card">{number===null ? '**** **** **** ****' : number }</p>
         <div className="datas-name-validate">
-          <text className="text-card">{nameTitular===null ? 'Nome do Titular' : nameTitular }</text>
-          <text className="text-card">{validateCard===null ? '00/00' : validateCard }</text>
+          <p className="text-card">{nameTitular===null ? 'Nome do Titular' : nameTitular }</p>
+          <p className="text-card">{validateCard===null ? '00/00' : validateCard }</p>
         </div>
       </div>
     </div>
