@@ -7,21 +7,33 @@ export const Card = ({numberCard, name, validate}) => {
   const [number, setNumber] = useState(null)
   const [nameTitular, setNameTitular] = useState(null)
   const [validateCard, setValidateCard] = useState(null)
+  const [abbleCard, setAbbleCard] = useState(false)
+
+  useEffect(()=>{setAbbleCard(false)},[])
 
   useEffect(()=>{
     setNumber(numberCard)
+    if(numberCard!==null){
+      setAbbleCard(true)
+    }
   }, [numberCard])
 
   useEffect(()=>{
     setNameTitular(name)
+    if(name!==null){
+      setAbbleCard(true)
+    }
   }, [name])
 
   useEffect(()=>{
     setValidateCard(validate)
+    if(validate!==null){
+      setAbbleCard(true)
+    }
   }, [validate])
 
   return(
-    <div className={number===null ? 'card-off' : 'card-on'}>
+    <div className={(!abbleCard ? 'card-off' : 'card-on')}>
       <div className="datas">
         <p className="text-card-number">{number===null ? '**** **** **** ****' : number }</p>
         <div className="datas-name-validate">
