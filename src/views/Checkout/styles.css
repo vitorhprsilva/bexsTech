@@ -1,0 +1,73 @@
+.checkout {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.div-left {
+  background-color: #4BDE95;
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.datas-left {
+  width: 100%;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-left: 2%;
+}
+
+.link-back {
+  color: white;
+  font-size: 13px;
+  text-decoration: none;
+  width: 100%;
+  word-wrap: break-word;
+  display: flex;
+  align-items: center;
+
+}
+
+.text-new-creditcard {
+  color: white;
+  font-size: 20px;
+  max-width: 90%;
+  display: flex;
+  font-weight: bold;
+  word-break: keep-all;
+  flex-wrap: wrap;
+}
+
+.div-card {
+  position: absolute;
+  top: 50%;
+}
+
+.div-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 15%;
+  width: 60%;
+}
+
+.div-inputs {
+  display: flex;
+  justify-content: space-around;
+  width: 95%;
+  height: 60%;
+  flex-direction: column;
+}
+
+.div-subinputs {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
