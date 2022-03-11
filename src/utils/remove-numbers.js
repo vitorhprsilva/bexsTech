@@ -1,0 +1,1 @@
+export const removeNumbers = (text) => text.replace(/[0-9]/g, '')
