@@ -10,8 +10,10 @@ const placeholderValidate = 'Validade'
 const placeholderCvv = 'CVV'
 const correctNumberCard = '4444555566667777' 
 const correctName = 'vitor hugo pereira rocha da silva'
-const correctDate = '07/23'
+const inCorrectName = 'vitor hugo pereira rocha da silva33333'
+const correctValidate = '0723'
 const correctCvv = '333'
+const inCorrectCvv = '3333'
 
 describe('TextInput', ()=>{
   it('render input', ()=>{
@@ -93,6 +95,84 @@ describe('TextInput', ()=>{
     userEvent.type(inputEl, correctNumberCard)
 
     expect(inputEl).not.toHaveValue(correctNumberCard)
+
+  });
+
+  it('correct name', ()=>{
+    render(
+      <Checkout />
+    );
+
+    const inputEl = screen.getByPlaceholderText(placeholderName)
+
+    userEvent.type(inputEl, correctName)
+
+    expect(inputEl).toHaveValue(removeNumbers(correctName))
+
+  });
+
+  it('incorrect name', ()=>{
+    render(
+      <Checkout />
+    );
+
+    const inputEl = screen.getByPlaceholderText(placeholderName)
+
+    userEvent.type(inputEl, inCorrectName)
+
+    expect(inputEl).not.toHaveValue(inCorrectName)
+
+  });
+
+  it('correct validate', ()=>{
+    render(
+      <Checkout />
+    );
+
+    const inputEl = screen.getByPlaceholderText(placeholderValidate)
+
+    userEvent.type(inputEl, correctValidate)
+
+    expect(inputEl).toHaveValue(validatesMask(correctValidate))
+
+  });
+
+  it('incorrect validate', ()=>{
+    render(
+      <Checkout />
+    );
+
+    const inputEl = screen.getByPlaceholderText(placeholderValidate)
+
+    userEvent.type(inputEl, correctValidate)
+
+    expect(inputEl).not.toHaveValue(correctValidate)
+
+  });
+
+  it('correct cvv', ()=>{
+    render(
+      <Checkout />
+    );
+
+    const inputEl = screen.getByPlaceholderText(placeholderCvv)
+
+    userEvent.type(inputEl, correctCvv)
+
+    expect(inputEl).toHaveValue(cvvMask(correctCvv))
+
+  });
+
+  it('incorrect cvv', ()=>{
+    render(
+      <Checkout />
+    );
+
+    const inputEl = screen.getByPlaceholderText(placeholderCvv)
+
+    userEvent.type(inputEl, inCorrectCvv)
+
+    expect(inputEl).not.toHaveValue(inCorrectCvv)
 
   });
 });
