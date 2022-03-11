@@ -12,6 +12,11 @@
   background: radial-gradient(73.06% 104.31% at 14.59% 58.06%, #5A7589 0%, #436175 33.7%, #315266 57.29%, #124768 100%);
   width: 492px;
   height: 303px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-radius: 4%;
+  padding-bottom: 2%;
 }
 
 .datas {
