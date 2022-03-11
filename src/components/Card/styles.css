@@ -8,15 +8,29 @@
   border-radius: 4%;
   padding-bottom: 2%;
 }
+
 .card-on {
   background: radial-gradient(73.06% 104.31% at 14.59% 58.06%, #5A7589 0%, #436175 33.7%, #315266 57.29%, #124768 100%);
   width: 492px;
   height: 303px;
   display: flex;
+  flex-direction: column;
   align-items: flex-end;
   justify-content: center;
   border-radius: 4%;
   padding-bottom: 2%;
+}
+
+.div-logo-card {
+  display: flex;
+  width: 90%;
+  height: 30%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.logo-card {
+  width: 20%;
 }
 
 .datas {
@@ -25,6 +39,7 @@
   align-items: flex-start;
   justify-content: center;
   width: 90%;
+  margin-right: 2%;
 }
 
 .text-card-number{

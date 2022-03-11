@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 
+import VisaSvg from '../../components/svg/Visa.svg'
+
 import './styles.css'
 
 export const Card = ({numberCard, name, validate}) => {
@@ -34,6 +36,11 @@ export const Card = ({numberCard, name, validate}) => {
 
   return(
     <div className={(!abbleCard ? 'card-off' : 'card-on')}>
+      {abbleCard && (
+        <div className="div-logo-card">
+          <img src={VisaSvg} alt="visa logo" className="logo-card" />
+        </div>
+      )}
       <div className="datas">
         <p className="text-card-number">{number===null ? '**** **** **** ****' : number }</p>
         <div className="datas-name-validate">
