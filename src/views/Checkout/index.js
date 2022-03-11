@@ -3,6 +3,9 @@ import {InputText, Card} from '../../components'
 import { validatesMask, cardNumberMask, removeNumbers, cvvMask } from '../../utils'
 import { BsChevronLeft } from 'react-icons/bs'
 
+import CardSvg from '../../components/svg/Grupo 2.svg'
+import ElipseCard from '../../components/svg/Elipse 1.svg'
+
 import './styles.css'
 
 export const Checkout = () => {
@@ -15,7 +18,7 @@ export const Checkout = () => {
           {/* <Link to='/teste' >Alterar forma de pagamento</Link> */}
           <div className='datas-left'>
             <a href='#' className='link-back'> <BsChevronLeft  /> Alterar forma de pagamento</a>
-            <p className='text-new-creditcard'>Adicione um novo cartão de crédito</p>
+            <div className='div-new-creditcard'><img src={ElipseCard} alt='card' className='img-elipse-card' /> <img src={CardSvg} alt='card' className='img-card' /><p className='text-new-creditcard'> Adicione um novo cartão de crédito </p></div>
           </div>
           <div className='div-card'>
             <Card numberCard={number} name={name} validate={validate}  />
