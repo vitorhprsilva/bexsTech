@@ -44,3 +44,13 @@ Crie um repositório em uma plataforma de pública de repositórios (GitHub, Bit
 ## Dúvidas
 
 Entre em contato e nos questione.
+
+## Instalação
+
+1. Instale primeiro o NodeJs
+
+2. Instale pelo npm o create-react-app
+
+3. Entre na pasta e de um npm install ou um yarn
+
+4. Rode yarn start ou npm start
