@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import {InputText, Card} from '../../components'
 import { validatesMask, cardNumberMask, removeNumbers, cvvMask } from '../../utils'
-import { BsChevronLeft } from 'react-icons/bs'
+import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 
 import CardSvg from '../../components/svg/Grupo 2.svg'
 import ElipseCard from '../../components/svg/Elipse 1.svg'
+import StagedCarrinho from '../../components/svg/Group 293.svg'
+import StagedPagamento from '../../components/svg/Group 291.svg'
+import StagedConfirmacao from '../../components/svg/Group 292.svg'
 
 import './styles.css'
 
@@ -25,6 +28,9 @@ export const Checkout = () => {
           </div>
         </div>
         <div className='div-right'>
+          <div className='div-stages'>
+            <p className='text-stages'> <img src={StagedCarrinho} alt='card' className='img-staged' />  <BsChevronRight  /> <img src={StagedPagamento} alt='card' className='img-staged' /> <BsChevronRight  /> <img src={StagedConfirmacao} alt='card' className='img-staged' /></p>
+          </div>
           <div className='div-inputs'>
             <InputText placeholder='Número do cartão' maskFunction={cardNumberMask} onChangeText={(text)=>setNumber(text)} maxLength={18} />
             <InputText placeholder='Nome (igual ao cartão)' maskFunction={removeNumbers} onChangeText={(text)=>setName(text)} maxLength={45}  />

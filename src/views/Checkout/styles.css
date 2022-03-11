@@ -80,6 +80,22 @@
   width: 60%;
 }
 
+.div-stages {
+  /* width: 100%; */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.text-stages {
+  color: #4BDE95;
+  margin-right: 5%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+
+}
+
 .div-inputs {
   display: flex;
   justify-content: space-around;
