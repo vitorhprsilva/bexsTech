@@ -3,6 +3,8 @@ import {InputText, Card} from '../../components'
 import { validatesMask, cardNumberMask, removeNumbers, cvvMask } from '../../utils'
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 
+import api from '../../services/api'
+
 import CardSvg from '../../components/svg/Grupo 2.svg'
 import ElipseCard from '../../components/svg/Elipse 1.svg'
 import StagedCarrinho from '../../components/svg/Group 293.svg'
@@ -15,6 +17,24 @@ export const Checkout = () => {
   const [number, setNumber] = useState(null)
   const [name, setName] = useState(null)
   const [validate, setValidate] = useState(null)
+  const [cvv, setCvv] = useState(null)
+
+  const handleSubmit = () => {
+    api.post('/pagar', {
+      number : number,
+      name: name,
+      validate: validate,
+      cvv: cvv,
+
+    })
+    .then(res=>{
+      alert(res.data.message)
+    })
+    .catch((e)=>{alert(e.data.error)})
+  }
+
+
+
   return (
       <div className='checkout'> 
         <div className='div-left'>
@@ -36,11 +56,12 @@ export const Checkout = () => {
             <InputText placeholder='Nome (igual ao cartão)' maskFunction={removeNumbers} onChangeText={(text)=>setName(text)} maxLength={45}  />
             <div className='div-subinputs'>
               <InputText placeholder='Validade' maskFunction={validatesMask} onChangeText={(text)=>setValidate(text)} maxLength={5}  /> 
-              <InputText placeholder='CVV' maskFunction={cvvMask} onChangeText={()=>{}} maxLength={4} /> 
+              <InputText placeholder='CVV' maskFunction={cvvMask} onChangeText={(text)=>setCvv(text)} maxLength={4} /> 
             </div> 
+            {/* <Dropdown options={options} onChange={this._onSelect} value={defaultOption} placeholder="Select an option" />; */}
           </div>
           <div className='div-button'>
-            <button onClick={()=>{}} className='btn-send' >Continuar</button>
+            <button onClick={handleSubmit} className='btn-send' >Continuar</button>
           </div>
         </div>
       </div>
